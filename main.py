@@ -135,13 +135,13 @@ def delete_messages(service, msg):
       }
     ).execute()
 
-# get emails that match the query you specify
+# get emails that match the query you specify, currently it gets all E-mail since the query is empty
 results = search_messages(service, "")
 print(f"Found {len(results)} results.")
 
 for msg in results:
     print(msg)
-    #
+    #replace "test" to search for another subject
     if read_message(service, msg) == "test":
         print("FOUND TEST")
         delete_messages(service, msg)
